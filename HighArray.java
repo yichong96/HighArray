@@ -117,10 +117,7 @@ public class HighArray {
     for (int i = 1; i < numElems; i++) {
       int marker = i;
       long markerVal = array[i];
-      while (marker > 0 && array[marker - 1] >= markerVal) {
-        if (array[marker] == markerVal) {
-          markerVal = -1;
-        }
+      while (marker > 0 && array[marker - 1] > markerVal) {
         array[marker] = array[marker - 1];
         marker--;
         innerCount++;
@@ -128,7 +125,7 @@ public class HighArray {
       array[marker] = markerVal;
       //display();
     }
-    System.out.printf("%d \n " ,innerCount);
+    System.out.printf("%d \n" ,innerCount);
   }
 
   public void insertionSortAndRemoveDups() {
