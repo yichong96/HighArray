@@ -13,7 +13,7 @@ public class MyCompletableFuture {
     //   System.out.println(Thread.currentThread().getName());
     // })).collect(Collectors.toList());
     // System.out.println("running Async");
-    // CompletableFuture.allOf(aList.toArray(new CompletableFuture[0]));
+    // CompletableFuture.allOf(aList.toArray(new CompletableFuture[0])).join();
 
 
   //System.out.println("Start");
@@ -30,10 +30,4 @@ public class MyCompletableFuture {
   System.out.println("main thread run");
    CompletableFuture.allOf(bList.toArray(new CompletableFuture[0])).join();
   }
-
-  CompletableFuture<Void> cf1 = CompletableFuture.runAsync(() -> {
-    System.out.println("run async");
-  });
-  System.out.println("main Thread execution");
-  //cf1.join();
 }
